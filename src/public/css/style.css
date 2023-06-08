@@ -1,0 +1,474 @@
+/**change px to em**/
+/**change webp to webp**/
+
+
+body{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'MinecraftRegular', impact, sans-serif;
+    text-align: center;
+    text-shadow: 2px 2px 2px #000;
+    color: #fff;
+}
+
+a{
+    text-decoration: none;
+    font-size: 32px;
+    color: #fff;
+    font-family: 'MinecraftRegular',  impact, sans-serif;
+    margin-top: 15px;
+}
+
+/**header**/
+header{
+    width: 100%;
+    background-image: url('/src/public/img/buildbattles/background.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    /**take height to have all elements in it**/
+    padding-top: 150px;
+}
+
+#slideshow{
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  animation: fade 3s infinite;
+}
+
+nav{
+    /**put elements next to eachother to the left**/
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: fixed;
+    right: 25px;
+    top: 0px;
+    z-index: 2;
+}
+
+.nav__sign{
+    width: 220px;
+    height: 165px;
+    background-image: url('/src/public/img/hanging_sign.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+    /**put elements in center**/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 50px;
+}
+
+
+#themeSign{
+    background-image: url('/src/public/img/wall_sign.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: left;
+    width: 572px;
+    height: 430px;
+    /**put elements in bottom right**/
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    text-transform: uppercase;
+}
+
+#themeSign *{
+    margin: 0px;
+}
+
+#themeSign section{
+    width: 460px;
+    height: 260px;
+    margin-right: 23px;
+}
+
+#smallText{
+    display: none;
+}
+
+#themeSign__title{
+    font-family: 'MinecraftBold', 'MinecraftTen', 'MinecraftRegular', impact, sans-serif;
+    font-size: 2.7em;
+    margin-top: 25px;
+}
+
+.themeSign__description{
+    font-size: 2.5em;
+    padding-top: 10px;
+}
+
+#discord__sign img{
+    min-width: 50px;
+}
+
+#buildbattle__title{
+    /**put elements next to eachother**/
+    justify-content: center;
+    align-items: center;
+    font-family: 'MinecraftTen', 'MinecraftBold', 'MinecraftRegular', impact, sans-serif;
+    font-size: 7em;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    /**side margin 50px**/
+    margin: 0px 100px;
+}
+
+#buildbattle__title h1{
+    margin: 0px;
+}
+
+img {
+     display: block; 
+}
+
+#buildbattle__title img{
+    width: 15vw;
+    margin-right: 20px;
+}
+
+/**Main**/
+main{
+    width: 100%;
+    background-image: url('/src/public/img/lava-nether.png');
+    background-size: contain;
+    background-color: #952626;
+    
+}
+
+main img{
+    width: 100%;
+}
+
+main div{
+    width: 60%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main section{
+    padding-top: 25%;
+    padding-bottom: 15%;
+}
+
+#cave{
+    background-image: url('../img/topper-cave.png'), url('../img/lower-cave.gif'), none; /* Specify the two background images */
+    background-repeat: no-repeat; /* Prevent background image repetition */
+    background-size: contain; /* Adjust the background image size to cover the div */
+    background-position: top, bottom, center;
+    background-color: #000;
+}
+
+#nether{
+    background-image: url('../img/topper-nether.png'), url('../img/lower-nether.png'), none; /* Specify the two background images */
+    background-repeat: no-repeat; /* Prevent background image repetition */
+    background-size: contain; /* Adjust the background image size to cover the div */
+    background-position: top, bottom, center;
+}
+
+#nether div{
+    margin: 50px auto;
+}
+
+#nether .button-discord{
+    margin-bottom: 10%;
+}
+
+/* Divide the div into sections using percentage-based heights */
+.buildThemeScroll:before {
+  content: "";
+  display: block;
+  height: 40%; /* Set the height of the top section */
+  background-color: black; /* Set the black color for the middle part */
+}
+.buildThemeScroll:after {
+  content: "";
+  display: block;
+  height: 40%; /* Set the height of the bottom section */
+}
+
+main h2{
+    font-family: 'MinecraftEvenings', 'MinecraftTen', 'MinecraftBold', 'MinecraftRegular', impact, sans-serif;
+    font-size: 4.5em;
+    margin: 0px;
+    width: 100%;
+    text-align: start;
+    z-index: 1;
+}
+
+main p{
+    font-size: 2em;
+    margin: 20px;
+    z-index: 1;
+}
+
+.button-discord{
+    /**put all next to eachother**/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #5865F2;
+    width: auto;
+    height: auto;
+    padding: 15px 30px;
+    border-radius: 100px;
+    color: #fff;
+    font-size: 2em;
+    text-decoration: none;
+    z-index: 1;
+}
+
+/**on hover**/
+.button-discord:hover{
+    background-color: #4E5AB5;
+    /**glow**/
+    box-shadow: 0px 0px 10px #4E5AB5;
+}
+
+.button-discord img{
+    width: 50px;
+    margin-right: 20px;
+}
+
+#floor{
+    background-color: #000;
+}
+
+/**footer**/
+footer{
+    font-family: 'MinecraftRegular', impact, sans-serif;
+    width: 100%;
+    background-color: #000;
+    background-image: url('../img/footer-bedrock.png');
+    background-size: cover;
+    background-repeat: repeat-y;
+    background-position: bottom;
+    padding-bottom: 5%;
+}
+
+#copyright{
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 0px;
+}
+
+/**when below 1280px change themesign size**/
+@media only screen and (max-width: 1680px) {
+    #buildbattle__title{
+        font-size: 6.5em;
+    }
+}
+
+/**1600px**/
+@media only screen and (max-width: 1600px) {
+    #buildbattle__title{
+        text-align: start;
+        position: relative;
+    }
+
+    #buildbattle__title h1{
+        bottom: 0px;
+        font-size: 1.8em;
+        width: 70%;
+    }
+
+    #buildbattle__title img{
+        position: absolute;
+        width: 15vw;
+        bottom: 0px;
+        right: 0px;
+    }
+
+    #themeSign{
+        width: 400px;
+        height: 300px;
+    }
+
+    #themeSign section{
+        width: 320px;
+        height: 180px;
+    }
+
+    #themeSign__title{
+        font-size: 1.8em;
+        margin-top: 15px;
+    }
+
+    .themeSign__description{
+        font-size: 1.7em;
+    }
+}
+
+/**1280px**/
+@media only screen and (max-width: 1280px) {
+    #buildbattle__title{
+        font-size: 5.5em;
+    }
+}
+
+/**1080px**/
+@media only screen and (max-width: 1080px) {
+    header{
+        padding-top: 100px;
+    }
+
+    nav{
+        right: 0px;
+    }
+
+    .nav__sign{
+        width: 150px;
+        height: 113px;
+        margin-right: 25px;
+    }
+
+    .nav__sign a{
+        font-size: 1.5em;
+        /**keep 15px left and right**/
+        margin: 0px 10px;
+        /**keep 15px top **/
+        margin-top: 15px;
+    }
+
+    #buildbattle__title{
+        font-size: 4.5em;
+        margin-top: 50px;
+    }
+
+}
+
+/**1024px**/
+@media only screen and (max-width: 1024px) {
+    #buildbattle__title{
+        margin: 50px 50px 0px 50px;
+    }
+}
+
+/**900px**/
+@media only screen and (max-width: 900px) {
+    #buildbattle__title{
+        font-size: 3.5em;
+    }
+
+    #themeSign{
+        width: 300px;
+        height: 225px;
+        aspect-ratio: 4/3;
+        -webkit-aspect-ratio: 4/3;
+        -moz-aspect-ratio: 4/3;
+        -o-aspect-ratio: 4/3;
+        /**put elements in center**/
+        justify-content: center;
+    }
+
+    #themeSign section{
+        width: 240px;
+        height: 135px;
+        padding-left: 30px;
+        margin: 0;
+    }
+
+    #themeSign__title{
+        font-size: 1.5em;
+        margin-top: 15px;
+    }
+
+    .themeSign__description{
+        font-size: 1.4em;
+        padding: 5px;
+    }
+    
+    main{
+        font-size: 0.8em;
+    }
+
+    .buildbattle-title{
+        text-align: center;
+        font-size: 4.5em;
+    }
+
+
+}
+
+/**750px**/
+@media only screen and (max-width: 750px) {
+    header{
+        padding-top: 150px;
+    }
+    #buildbattle__title{
+        font-size: 3em;
+    }
+    #buildThemeScroll{
+        width: 80%;
+    }
+}
+
+/**600px**/
+@media only screen and (max-width: 600px) {
+    #buildbattle__title{
+        font-size: 2.5em;
+    }
+
+    #themeSign{
+        width: 200px;
+        height: 150px;
+        /**put elements in center**/
+        justify-content: center;
+    }
+
+    #themeSign section{
+        width: 160px;
+        height: 90px;
+        margin: 0;
+    }
+
+    #themeSign__title{
+        font-size: 1.2em;
+        margin-top: 15px;
+    }
+
+    #longText{
+        display: none;
+    }
+
+    #smallText{
+        display: block;
+    }
+
+    .buildbattle-title{
+        text-align: center;
+        font-size: 4em;
+    }
+}
+
+/**520px**/
+@media only screen and (max-width: 520px) {
+    #buildbattle__title{
+        font-size: 2em;
+    }
+    main section div{
+        width: 95%;
+    }
+}
+
+/**450px**/
+@media only screen and (max-width: 450px) {
+    #buildbattle__title{
+        font-size: 2.3em;
+    }
+    #buildbattle__title img{
+        bottom: 1.5em;
+        left: 6.5em;
+        width: 75px;
+    }
+}

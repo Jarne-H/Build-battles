@@ -1,0 +1,35 @@
+@font-face{
+    font-family: 'MinecraftRegular';
+    src: url("../fonts/woff2/MinecraftRegular.woff2") format('woff2'),
+         url("../fonts/woff/MinecraftRegular.woff") format('woff');
+}
+/**MinecraftTen**/
+@font-face{
+    font-family: 'MinecraftTen';
+    src: url("../fonts/woff2/MinecraftTen.woff2") format('woff2'),
+         url("../fonts/woff/MinecraftTen.woff") format('woff');
+}
+/**MinecraftBold**/
+@font-face{
+    font-family: 'MinecraftBold';
+    src: url("../fonts/woff2/MinecraftBold.woff2") format('woff2'),
+         url("../fonts/woff/MinecraftBold.woff") format('woff');
+}
+/**MinecraftItalic**/
+@font-face{
+    font-family: 'MinecraftItalic';
+    src: url("../fonts/woff2/MinecraftItalic.woff2") format('woff2'),
+         url("../fonts/woff/MinecraftItalic.woff") format('woff');
+}
+/**MinecraftBoldItalic**/
+@font-face{
+    font-family: 'MinecraftBoldItalic';
+    src: url("../fonts/woff2/MinecraftBoldItalic.woff2") format('woff2'),
+         url("../fonts/woff/MinecraftBoldItalic.woff") format('woff');
+}
+/**minecraftEvenings**/
+@font-face{
+    font-family: 'MinecraftEvenings';
+    src: url("../fonts/woff2/minecraftEvenings.woff2") format('woff2'),
+         url("../fonts/woff/minecraftEvenings.woff") format('woff');
+}
