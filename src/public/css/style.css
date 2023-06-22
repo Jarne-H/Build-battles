@@ -135,7 +135,7 @@ img {
 /**Main**/
 main{
     width: 100%;
-    background-image: url('/src/public/img/lava-nether.png');
+    background-image: url('/src/public/img/lava-nether.webp');
     background-size: contain;
     background-color: #952626;
     
@@ -160,7 +160,7 @@ main section{
 }
 
 #cave{
-    background-image: url('../img/topper-cave.png'), url('../img/lower-cave.gif'), none; /* Specify the two background images */
+    background-image: url('../img/topper-cave.webp'), url('../img/lower-cave.gif'), none; /* Specify the two background images */
     background-repeat: no-repeat; /* Prevent background image repetition */
     background-size: contain; /* Adjust the background image size to cover the div */
     background-position: top, bottom, center;
@@ -168,7 +168,7 @@ main section{
 }
 
 #nether{
-    background-image: url('../img/topper-nether.png'), url('../img/lower-nether.png'), none; /* Specify the two background images */
+    background-image: url('../img/topper-nether.webp'), url('../img/lower-nether.webp'), none; /* Specify the two background images */
     background-repeat: no-repeat; /* Prevent background image repetition */
     background-size: contain; /* Adjust the background image size to cover the div */
     background-position: top, bottom, center;
@@ -247,7 +247,7 @@ footer{
     font-family: 'MinecraftRegular', impact, sans-serif;
     width: 100%;
     background-color: #000;
-    background-image: url('../img/footer-bedrock.png');
+    background-image: url('../img/footer-bedrock.webp');
     background-size: cover;
     background-repeat: repeat-y;
     background-position: bottom;
