@@ -1,0 +1,57 @@
+*, main{
+    background: none;
+}
+header{
+    padding: 0;
+}
+
+#explenation{
+    padding: 0;
+    background-color: #749FF1;
+    background-image: url("../img/topper-grass.png");
+    background-size: calc(50px*18);
+    background-repeat: repeat-x;
+    background-position: bottom;
+}
+
+body{
+    background-image: url("../img/textures/stone1.png");
+    background-size: 50px;
+}
+
+#builder-swapper{
+    /*put in a auto aranging grid*/
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    justify-items: center;
+    align-items: center;
+}
+
+#builder-swapper div{
+    /**keep square */
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    align-items: center;
+}
+
+#builder-swapper h2{
+    font-family: 'MinecraftBold', 'MinecraftTen', 'MinecraftRegular', impact, sans-serif;
+    font-size: 2em;
+    text-align: center;
+    height: 2em;
+    /**center text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#builder-swapper p{
+    min-height: 2em;
+    font-size: 1.5em;
+    /**center text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
