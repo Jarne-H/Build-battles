@@ -1,4 +1,5 @@
 User-agent: *
+Disallow: 
 Disallow: /dynmap.html
-
+Disallow: /cgi-bin/
 Sitemap: https://build-battle.com/sitemap.xml
