@@ -22,7 +22,7 @@ a{
 /**header**/
 header{
     width: 100%;
-    background-image: url('/src/public/img/buildbattles/background.webp');
+    background-image: url('../img/buildbattles/background.webp');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -51,7 +51,7 @@ nav{
 .nav__sign{
     width: 220px;
     height: 165px;
-    background-image: url('/src/public/img/hanging_sign.webp');
+    background-image: url('../img/hanging_sign.webp');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top;
@@ -64,7 +64,7 @@ nav{
 
 
 #themeSign{
-    background-image: url('/src/public/img/wall_sign.webp');
+    background-image: url('../img/wall_sign.webp');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: left;
@@ -135,7 +135,7 @@ img {
 /**Main**/
 main{
     width: 100%;
-    background-image: url('/src/public/img/lava-nether.webp');
+    background-image: url('../img/lava-nether.webp');
     background-size: contain;
     background-color: #952626;
     
