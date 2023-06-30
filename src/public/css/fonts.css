@@ -30,6 +30,6 @@
 /**minecraftEvenings**/
 @font-face{
     font-family: 'MinecraftEvenings';
-    src: url("../fonts/woff2/minecraftEvenings.woff2") format('woff2'),
-         url("../fonts/woff/minecraftEvenings.woff") format('woff');
+    src: url("../fonts/woff2/MinecraftEvenings.woff2") format('woff2'),
+         url("../fonts/woff/MinecraftEvenings.woff") format('woff');
 }
