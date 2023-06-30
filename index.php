@@ -78,5 +78,7 @@
         <a id="copyright" href="https://www.duckstyle-design.be">Copyright Duckstyle 2023</a>
     </footer>
 </body>
+<!--
 <script src="src/public/js/buildslideshow.js"></script>
+-->
 </html>
