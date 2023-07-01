@@ -1,7 +1,14 @@
 <?php
-/**start php code */
-// include the file that contains the function
-
+//get data to connect to database
+require_once "/src/config.php";
+//connect to database
+$link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
+//check connection
+if($link === false){
+    die("ERROR: Could not connect. " . mysqli_connect_error());
+}else{
+    echo "Connected successfully";
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
