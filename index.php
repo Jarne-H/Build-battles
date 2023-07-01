@@ -1,15 +1,3 @@
-<?php
-//get data to connect to database
-require_once "/src/config.php";
-//connect to database
-$link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
-//check connection
-if($link === false){
-    die("ERROR: Could not connect. " . mysqli_connect_error());
-}else{
-    echo "Connected successfully";
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,8 +10,8 @@ if($link === false){
     <meta name="description" content="We're stiving to become the number 1 builders and buildbattle community! If you're interested in participating, consider joining our discord server!">
     <meta name="keywords" content="buildbattle, buildbattles, build, battles, minecraft, minecraft buildbattle, minecraft buildbattles, minecraft build, minecraft battles, minecraft buildbattles, minecraft buildbattle, minecraft buildbattle theme, minecraft buildbattles theme, minecraft build theme, minecraft battles theme, minecraft buildbattles theme, minecraft buildbattle theme, minecraft buildbattle theme, minecraft buildbattles theme, minecraft build theme, minecraft battles theme, minecraft buildbattles theme, minecraft buildbattle theme, buildbattle theme, buildbattles theme, build theme, battles theme, buildbattles theme, buildbattle theme, buildbattle theme, buildbattles theme, build theme, battles theme, buildbattles theme, buildbattle theme">
     <meta name="author" content="Duckstyle">
+    <link rel="stylesheet" href="src/hidden/css/fonts.css">
     <link rel="stylesheet" href="src/public/css/style.css">
-    <link rel="stylesheet" href="src/public/css/fonts.css">
 </head>
 <body>
     <header>
@@ -86,6 +74,6 @@ if($link === false){
     </footer>
 </body>
 <!--
-<script src="src/public/js/buildslideshow.js"></script>
+<script src="src/js/buildslideshow.js"></script>
 -->
 </html>
