@@ -5,7 +5,7 @@ require_once "src/hidden/config/config.php";
 $link = mysqli_connect($DB_SERVER, $DB_USERNAME, $DB_PASSWORD, $DB_NAME);
 //check connection
 if($link === false){
-    die("ERROR: Could not connect. " . mysqli_connect_error());
+    die("ERROR: Could not connect. CONTACT THE ADMIN! ERROR:" . mysqli_connect_error());
 }
 //start session
 session_start();
@@ -20,8 +20,6 @@ if (mysqli_num_rows($result) > 0) {
         $theme_name = $row["theme_name"];
         $theme = $row["theme"];
         $last_used = $row["last_used"];
-        //echo theme_name, theme and last_used
-        echo "$theme_name:<br> $theme <br> $last_used<br><br>";
     }
 } else {
     echo "0 results";
@@ -70,12 +68,26 @@ if (mysqli_num_rows($result) > 0) {
                     <h2 class="buildbattle-title">Build Theme</h2>
                     <p >
                         <?php
-                            //check if there is a theme used within the last month
-                            if ($last_used > date("Y-m-d", strtotime("-1 month"))) {
-                                //if there is a theme used within the last month, echo the theme
-                                echo $theme;
+                            //get the current time
+                            $current_time = date("Y-m-d H:i:s");
+                            //check if there is a theme used used since the first day 12:00 of the current month
+                            $sql = "SELECT theme_name, theme, last_used FROM themes WHERE last_used > date_sub(now(), interval 1 month)";
+                            $result = mysqli_query($link, $sql);
+                            //check if there are any results
+                            if (mysqli_num_rows($result) > 0) {
+                                //output data of each row
+                                while($row = mysqli_fetch_assoc($result)) {
+                                    //get theme_name, theme and last_used from tabel 'themes'
+                                    $theme_name = $row["theme_name"];
+                                    $theme = $row["theme"];
+                                    $last_used = $row["last_used"];
+                                    
+                                    echo $theme;
+
+                                        
+                                }
                             } else {
-                                //if there is no theme used within the last month, get random theme from database which hasn't been used in 3 months
+                                //get random theme from tabel 'themes' which hasn't been used in 3 months
                                 $sql = "SELECT theme_name, theme, last_used FROM themes WHERE last_used < date_sub(now(), interval 3 month) ORDER BY RAND() LIMIT 1";
                                 $result = mysqli_query($link, $sql);
                                 //check if there are any results
@@ -86,15 +98,21 @@ if (mysqli_num_rows($result) > 0) {
                                         $theme_name = $row["theme_name"];
                                         $theme = $row["theme"];
                                         $last_used = $row["last_used"];
-                                        //echo theme_name, theme and last_used
+                                        
                                         echo $theme;
-                                        //update last_used in database to the first day of the currect month 12:00:00
-                                        $sql = "UPDATE themes SET last_used = DATE_FORMAT(NOW() ,'%Y-%m-01 12:00:00') WHERE theme_name = '$theme_name'";
-                                        $result = mysqli_query($link, $sql);
+                                        
+                                        //update last_used in tabel 'themes'
+                                        $sql = "UPDATE themes SET last_used = '$current_time' WHERE theme_name = '$theme_name'";
+                                        if(mysqli_query($link, $sql)){
+                                            //echo "Records were updated successfully.";
+                                        } else {
+                                            echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+                                        }
                                     }
                                 } else {
-                                    echo "0 results, contact the admin";
+                                    echo "0 results";
                                 }
+                                
                             }
                         
                             //close connection
