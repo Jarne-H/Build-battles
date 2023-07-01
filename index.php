@@ -1,3 +1,32 @@
+<?php
+//connect to database and start session src/hidden/config/config.php
+require_once "src/hidden/config/config.php";
+//connect to databse
+$link = mysqli_connect($DB_SERVER, $DB_USERNAME, $DB_PASSWORD, $DB_NAME);
+//check connection
+if($link === false){
+    die("ERROR: Could not connect. " . mysqli_connect_error());
+}
+//start session
+session_start();
+//get theme_name, theme and last_used from tabel 'themes'
+$sql = "SELECT theme_name, theme, last_used FROM themes";
+$result = mysqli_query($link, $sql);
+//check if there are any results
+if (mysqli_num_rows($result) > 0) {
+    //output data of each row
+    while($row = mysqli_fetch_assoc($result)) {
+        //get theme_name, theme and last_used from tabel 'themes'
+        $theme_name = $row["theme_name"];
+        $theme = $row["theme"];
+        $last_used = $row["last_used"];
+        //echo theme_name, theme and last_used
+        echo "$theme_name:<br> $theme <br> $last_used<br><br>";
+    }
+} else {
+    echo "0 results";
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,9 +69,37 @@
                 <div id="buildThemeScroll">
                     <h2 class="buildbattle-title">Build Theme</h2>
                     <p >
-                        In the current buildbattle, you have to build a castle in the style/shape of any Minecraft-related mob.
-                        Mobs from mob votes are also included. What exactly qualifies as a castle is up to you.
-                        It can be a mansion, palace, casual castle, bastion surrounded by a castle wall,...
+                        <?php
+                            //check if there is a theme used within the last month
+                            if ($last_used > date("Y-m-d", strtotime("-1 month"))) {
+                                //if there is a theme used within the last month, echo the theme
+                                echo $theme;
+                            } else {
+                                //if there is no theme used within the last month, get random theme from database which hasn't been used in 3 months
+                                $sql = "SELECT theme_name, theme, last_used FROM themes WHERE last_used < date_sub(now(), interval 3 month) ORDER BY RAND() LIMIT 1";
+                                $result = mysqli_query($link, $sql);
+                                //check if there are any results
+                                if (mysqli_num_rows($result) > 0) {
+                                    //output data of each row
+                                    while($row = mysqli_fetch_assoc($result)) {
+                                        //get theme_name, theme and last_used from tabel 'themes'
+                                        $theme_name = $row["theme_name"];
+                                        $theme = $row["theme"];
+                                        $last_used = $row["last_used"];
+                                        //echo theme_name, theme and last_used
+                                        echo $theme;
+                                        //update last_used in database to the first day of the currect month 12:00:00
+                                        $sql = "UPDATE themes SET last_used = DATE_FORMAT(NOW() ,'%Y-%m-01 12:00:00') WHERE theme_name = '$theme_name'";
+                                        $result = mysqli_query($link, $sql);
+                                    }
+                                } else {
+                                    echo "0 results, contact the admin";
+                                }
+                            }
+                        
+                            //close connection
+                            mysqli_close($link);
+                        ?>
                         <br><br>
                         If you have any questions, hop over to our Discord!
                     </p>
@@ -56,7 +113,7 @@
         <section id="nether">
             <div id="buildThemeScroll">
                 <h2 class="buildbattle-title">How to join</h2>
-                <p >
+                <p>
                     If you want to participate in a more competitive way or simply want to see what other people have created, feel free to join our Discord.
                     Being a part of our Discord community allows you to engage with like-minded individuals and explore various builds.
                     Whether you're interested in showcasing your skills or simply enjoying the creative atmosphere. You are more than welcome!
