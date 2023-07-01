@@ -11,12 +11,12 @@ abstract class DB {
         public static function getInstance() {
             if(self::$conn != null) {
                 // REUSE our connection
-                echo "🚀";
+                //echo "🚀";
                 return self::$conn;
             }
             else {
                 // CREATE a new connection
-                echo "🚀🚀";
+                //echo "🚀🚀";
                 // get the configuration for our connection from one central settings file
                 $config = self::getConfig();
                 $database = $config['database'];
@@ -24,7 +24,7 @@ abstract class DB {
                 $host = $config['host'];
                 $password = $config['password'];
                 
-                echo "💥";
+                //echo "💥";
                 self::$conn = new PDO('mysql:host='.$host.';dbname='.$database, $user, $password);
                 return self::$conn;
             }
