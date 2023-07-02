@@ -27,8 +27,9 @@ $theme = $themeManager->getTheme();
     <header>
         <section id="slideshow">
             <nav>
-                <div class="nav__sign"><a href="builders.html">Who are we?</a></div>
-                <div class="nav__sign"><a href="#">Previous<br>winners</a></div>
+                <a href="index.php"><div class="nav__sign"><p>Build theme</p></div></a>
+                <a href="builders.html"><div class="nav__sign"><p>Who are we?</p></div></a>
+                <a href="winners.html"><div class="nav__sign"><p>Previous<br>winners</p></div></a>
             </nav>
             <div id="themeSign" href="#buildThemeScroll">
                 <section>

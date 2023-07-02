@@ -1,0 +1,25 @@
+*, main, header, footer{
+    background: none;
+}
+
+.secondary-header{
+    background-color: #749FF1;
+    background-image: url("../img/topper-grass.png");
+    background-size: calc(50px*18);
+    background-repeat: repeat-x;
+    background-position: 0% 100%;
+}
+
+#buildbattle__title h1{
+    text-align: left;
+    width: 100%;
+}
+
+.discord__sign{
+    display:inline-block;
+}
+
+main{
+    background-image: url("../img/textures/stone1.png");
+    background-size: 50px;
+}

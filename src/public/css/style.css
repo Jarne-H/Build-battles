@@ -1,6 +1,8 @@
 /**change px to em**/
 /**change webp to webp**/
-
+input{
+    caret-color: red;
+  }
 
 body{
     margin: 0px;
@@ -27,7 +29,7 @@ header{
     background-repeat: no-repeat;
     background-position: center;
     /**take height to have all elements in it**/
-    padding-top: 150px;
+    padding-top: 175px;
 }
 
 #slideshow{
@@ -46,6 +48,14 @@ nav{
     right: 25px;
     top: 0px;
     z-index: 2;
+}
+
+nav a{
+    margin-top: 0px;
+}
+
+nav p{
+    padding-top: 15px;
 }
 
 .nav__sign{
@@ -282,7 +292,7 @@ footer section div{
     margin-bottom: 0px;
 }
 
-/**when below 1280px change themesign size**/
+/**when below 1680px change themesign size**/
 @media only screen and (max-width: 1680px) {
     #buildbattle__title{
         font-size: 6.5em;
@@ -298,7 +308,7 @@ footer section div{
 
     #buildbattle__title h1{
         bottom: 0px;
-        font-size: 1.8em;
+        font-size: 1.3em;
         width: 70%;
     }
 
@@ -332,7 +342,7 @@ footer section div{
 /**1280px**/
 @media only screen and (max-width: 1280px) {
     #buildbattle__title{
-        font-size: 5.5em;
+        font-size: 5em;
     }
 }
 
@@ -428,6 +438,9 @@ footer section div{
     #buildbattle__title{
         font-size: 3em;
     }
+    #buildbattle__title img {
+        margin-right: 0px
+    }
     #buildThemeScroll{
         width: 80%;
     }
@@ -487,7 +500,7 @@ footer section div{
         font-size: 2.3em;
     }
     #buildbattle__title img{
-        bottom: 1.5em;
+        bottom: 1.1em;
         left: 6.5em;
         width: 75px;
     }
