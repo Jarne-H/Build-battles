@@ -3,20 +3,10 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
+require_once 'bootstrap.php';
 
-require_once 'src/hidden/php/bootstrap.php';
-require_once 'src/hidden/php/db.php';
-
-
-//connect to database and start session src/hidden/config/config.php
-require_once 'src/hidden/config/config.php';
-
-//make $link for connection to database using db.php
-$link = DB::getInstance();
-//check connection
-if($link === false){
-    die("ERROR: Could not connect. CONTACT THE ADMIN! ERROR:" . mysqli_connect_error());
-}
+$themeManager = new getTheme();
+$theme = $themeManager->getTheme();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -43,7 +33,11 @@ if($link === false){
             <div id="themeSign" href="#buildThemeScroll">
                 <section>
                     <h3 id="themeSign__title">Current Theme:</h3>
-                    <p class="themeSign__description" id="longText">Castle in style/<br>shape of any mob</p>
+                    <p class="themeSign__description" id="longText">
+                        <?php
+                        echo $theme["theme_name"];
+                        ?>
+                    </p>
                     <p class="themeSign__description" id="smallText">Click here!</p>
                 </section>
             </div>
@@ -61,62 +55,8 @@ if($link === false){
                     <h2 class="buildbattle-title">Build Theme</h2>
                     <p >
                         <?php
-$current_time = date("Y-m-d H:i:s");
-
-// create a PDO instance
-$dbConfig = parse_ini_file(__DIR__ . "/src/hidden/config/config.ini");
-$dsn = 'mysql:host=' . $dbConfig['host'] . ';dbname=' . $dbConfig['database'];
-$pdo = new PDO($dsn, $dbConfig['user'], $dbConfig['password']);
-
-// check if there is a theme used since the first day 12:00 of the current month
-$sql = "SELECT theme_name, theme, last_used FROM themes WHERE last_used > DATE_SUB(DATE_SUB(NOW(), INTERVAL DAY(NOW())-1 DAY), INTERVAL 12 HOUR) ORDER BY last_used DESC LIMIT 1";
-$result = $pdo->query($sql);
-
-// check if there are any results
-if ($result->rowCount() > 0) {
-    // output data of each row
-    while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
-        // get theme_name, theme, and last_used from table 'themes'
-        $theme_name = $row["theme_name"];
-        $theme = $row["theme"];
-        $last_used = $row["last_used"];
-
-        echo $theme;
-    }
-} else {
-    // get random theme from table 'themes' which hasn't been used in 3 months
-    $sql = "SELECT theme_name, theme, last_used FROM themes WHERE last_used < DATE_SUB(NOW(), INTERVAL 3 MONTH) ORDER BY RAND() LIMIT 1";
-    $result = $pdo->query($sql);
-
-    // check if there are any results
-    if ($result->rowCount() > 0) {
-        // output data of each row
-        while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
-            // get theme_name, theme, and last_used from table 'themes'
-            $theme_name = $row["theme_name"];
-            $theme = $row["theme"];
-            $last_used = $row["last_used"];
-
-            echo $theme;
-
-            // update last_used in table 'themes'
-            $sql = "UPDATE themes SET last_used = :current_time WHERE theme_name = :theme_name";
-            $stmt = $pdo->prepare($sql);
-            $stmt->bindParam(':current_time', $current_time);
-            $stmt->bindParam(':theme_name', $theme_name);
-            if ($stmt->execute()) {
-                // echo "Records were updated successfully.";
-            } else {
-                echo "ERROR: Could not able to execute $sql.";
-            }
-        }
-    } else {
-        echo "0 results";
-    }
-}
-
-// close connection
-$pdo = null;
+                        //use getTheme() from getTheme.php to get the current theme
+                        echo $theme["theme"];
                         ?>
                         <br><br>
                         If you have any questions, hop over to our Discord!

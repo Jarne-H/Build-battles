@@ -4,8 +4,8 @@ abstract class DB {
         private static $conn;
 
         private static function getConfig(){
-            // get the config file
-            return parse_ini_file(__DIR__ . "/../config/config.ini");
+            // get the config file from the root of the project
+            return parse_ini_file(__DIR__ . "/src/hidden/config/config.ini");
         }
 
         public static function getInstance() {
