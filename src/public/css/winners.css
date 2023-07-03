@@ -1,0 +1,57 @@
+main section{
+    padding: 3em;
+}
+
+.winner{
+    width: 80%;
+    height: 45%;
+    margin-bottom: 3em;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+/**children of .winner */
+.winner div, .winner h3{
+    position: relative;
+}
+
+.winner div{
+    width: fit-content;
+    margin-right: 0;
+    margin-bottom: 40%;
+    display: flex;
+    /**next to eachother */
+    flex-direction: row;
+    /**center text */
+    justify-content: right;
+    align-items: center;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.winner div h4{
+    font-size: 2em;
+    font-family: 'MinecraftBold', 'MinecraftTen', 'MinecraftRegular', impact, sans-serif;
+    font-weight: 100;
+    /*marg left & right 5% */
+    margin: 0 50px;
+}
+
+.winner div img{
+    width: 5em;
+    height: 5em;
+}
+
+.winner h3{
+    /**width of text */
+    margin: 0 auto 0 0;
+    padding: 0.5em 1em;
+    font-size: 2em;
+    text-align: center;
+    /**center text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'MinecraftBold', 'MinecraftTen', 'MinecraftRegular', impact, sans-serif;
+    background-color: #000;
+}

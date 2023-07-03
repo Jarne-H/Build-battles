@@ -23,3 +23,10 @@ main{
     background-image: url("../img/textures/stone1.png");
     background-size: 50px;
 }
+
+
+footer{
+    background-image: url('../img/textures/bedrock1.png');
+    background-size: 50px;
+    background-repeat: repeat;
+}

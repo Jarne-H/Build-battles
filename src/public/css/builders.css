@@ -45,11 +45,3 @@ header{
     justify-content: center;
     align-items: center;
 }
-
-
-footer{
-    background-image: url('../img/textures/bedrock1.png');
-    background-size: 50px;
-    background-repeat: repeat;
-
-}
